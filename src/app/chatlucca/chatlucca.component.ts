@@ -13,13 +13,13 @@ interface Messages {
   styleUrls: ['./chatlucca.component.scss']
 })
 export class ChatluccaComponent implements OnInit {
-  @Input() username: string;
+  @Input() utilisateur: string;
 
   messages: Messages[] = [];
   textAreaInput = '';
 
   constructor(private chatluccaService: ChatluccaService) {
-    this.username='';
+    this.utilisateur='';
   }
 
   ngOnInit(): void {
@@ -32,12 +32,12 @@ export class ChatluccaComponent implements OnInit {
 
   confirmText(content: string): void {
     if (content !== '') {
-      this.chatluccaService.pushText(this.username, content);
+      this.chatluccaService.pushText(this.utilisateur, content);
       this.textAreaInput = '';
     }
   }
 
-  keyDownFunction(event: { ctrlKey: any; keyCode: number; preventDefault: () => void; }, content: string): void {
+  sendMessage(event: { ctrlKey: any; keyCode: number; preventDefault: () => void; }, content: string): void {
   if (event.ctrlKey && event.keyCode === 13) {
     this.textAreaInput = this.textAreaInput + '\n';
 

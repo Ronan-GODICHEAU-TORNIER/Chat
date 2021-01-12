@@ -36,25 +36,18 @@
     margin: 1rem 0;
     width: fit-content;
     flex-wrap: wrap;
-
     &.message-style-sender {
       justify-content: right;
       margin-left: auto;
-
-
       .text{
         background-color: #46a1ff;
-      }
-    }
-    &.message-style-receiver {
+      }}&.message-style-receiver {
       justify-content: left;
       .writer-name{
         display: flex;
         color: black;
         margin: .5rem 0;
-      }
-
-      .text{
+      }.text{
         background-color: rgb(209, 209, 209);
         color:black;
       }
@@ -63,11 +56,10 @@
   .chat-lucca{
     margin-top: 5%;
   }
-
   .input-container {
     display: flex;
   }
-  .username-box {
+  .user-box {
     border: solid 1px #666;
     border-radius:20px;
     text-align: center;
@@ -79,13 +71,11 @@
     padding: 0;
   }
   .text-input {
-    overflow: hidden;
     width: 90%;
     height: 30px;
     border-radius: 5px;
     border-radius: 5px;
     margin-right:2px;
-    background-color: rgb(206, 206, 206);
     border: solid 1px #666;
   }
   .text-send {
