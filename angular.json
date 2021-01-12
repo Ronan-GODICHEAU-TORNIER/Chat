@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chatlucca"
+    }
+  },
+  "defaultProject": "chatlucca",
+  "cli": {
+    "analytics": false
+  }
 }

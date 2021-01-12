@@ -1,0 +1,27 @@
+<div class="container,col-sm"
+[ngClass]="{'container-user1': (username === 'User 1'), 'container-user2': (username !== 'User 2')}">
+  <div class="username-box ">
+    <h4 class='user'>
+      {{username}}
+    </h4>
+  </div>
+
+  <div *ngIf="messages" class="messages-box">
+    <ul class="all-messages">
+      <li class="message"
+        *ngFor="let message of messages"
+          [ngClass]="{'message-style-sender': (username === message.writer), 'message-style-receiver': (username !==  message.writer)}">
+        <span class="text">
+          {{message.text}}
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="input-container">
+      <textarea #text class="text-input" [placeholder]="'Message...'" [(ngModel)]="textAreaInput" (keydown)="keyDownFunction($event, text.value)"></textarea>
+      <div class="text-send" (click)="confirmText(text.value)">
+      </div>
+  </div>
+
+</div>
