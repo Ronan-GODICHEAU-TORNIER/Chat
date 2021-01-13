@@ -10,14 +10,10 @@
     width: 100%;
   }
   .messages-box {
+    padding-right: 2px;
     display: flex;
     white-space: normal;
     word-break: break-all;
-    padding-right: 2px;
-  }
-  .user {
-    color: black;
-    text-align: center;
   }
   .text {
     border-radius: 5px;
@@ -27,23 +23,29 @@
     justify-content: center;
     color: white;
   }
+  .user {
+    color: black;
+    text-align: center;
+  }
   .message{
     display: flex;
     margin: 1rem 0;
     width: fit-content;
-    &.sender {
-      margin-left: auto;
-      justify-content: right;
-      .text{
-        background-color: #46a1ff;
-      }}&.receiver {
-        justify-content: left;
+    &.receiver {
+      justify-content: left;
       .writer-name{
         display: flex;
         color: black;
       }.text{
         background-color: rgb(209, 209, 209);
         color:black;
+      }
+    }
+    &.sender {
+      margin-left: auto;
+      justify-content: right;
+      .text{
+        background-color: #46a1ff;
       }
     }
   }
@@ -62,14 +64,14 @@
     color: white;
     border-radius:  5px;
     &:after{
+      justify-content: center;
+      align-items: center;
       position: absolute;
       width: 100%;
       height: 100%;
       font-size: 10px;
       display: flex;
       content:"send";
-      justify-content: center;
-      align-items: center;
     }
   }
   .user-box {

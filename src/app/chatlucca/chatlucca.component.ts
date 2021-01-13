@@ -6,7 +6,6 @@ interface Messages {
   writer: string;
   text: string;
 }
-
 @Component({
   selector: 'chat-lucca',
   templateUrl: './chatlucca.component.html',
@@ -14,10 +13,8 @@ interface Messages {
 })
 export class ChatluccaComponent implements OnInit {
   @Input() utilisateur: string;
-
-  messages: Messages[] = [];
   textInput = '';
-
+  messages: Messages[] = [];
   constructor(private chatluccaService: ChatluccaService) {
     this.utilisateur='';
   }
@@ -43,9 +40,5 @@ export class ChatluccaComponent implements OnInit {
       this.textInput = '';
     }
   }
-
-
-
-
 }
 
