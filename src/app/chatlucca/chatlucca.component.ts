@@ -16,7 +16,7 @@ export class ChatluccaComponent implements OnInit {
   @Input() utilisateur: string;
 
   messages: Messages[] = [];
-  textAreaInput = '';
+  textInput = '';
 
   constructor(private chatluccaService: ChatluccaService) {
     this.utilisateur='';
@@ -30,22 +30,22 @@ export class ChatluccaComponent implements OnInit {
     );
   }
 
-  confirmText(content: string): void {
+  clickSendButton(content: string): void {
     if (content !== '') {
       this.chatluccaService.pushText(this.utilisateur, content);
-      this.textAreaInput = '';
+      this.textInput = '';
+    }
+  }
+  sendWithEnter(event: { ctrlKey: any; keyCode: number; preventDefault: () => void; }, content: string): void {
+    if (event.keyCode === 13&&content !== '') {
+      this.chatluccaService.pushText(this.utilisateur, content);
+      event.preventDefault();
+      this.textInput = '';
     }
   }
 
-  sendMessage(event: { ctrlKey: any; keyCode: number; preventDefault: () => void; }, content: string): void {
-  if (event.ctrlKey && event.keyCode === 13) {
-    this.textAreaInput = this.textAreaInput + '\n';
 
-  } else if (event.keyCode === 13) {
-    event.preventDefault();
-    this.confirmText(content);
-   }
 
-  }
+
 }
 
